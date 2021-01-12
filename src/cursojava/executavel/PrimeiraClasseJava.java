@@ -18,15 +18,6 @@ public class PrimeiraClasseJava {
 		String NomePai = JOptionPane.showInputDialog("Qual o nome do pai do Aluno?");
 		String DataMatricula = JOptionPane.showInputDialog("Qual a data de matrícula do Aluno?");
 		String NomeEscola = JOptionPane.showInputDialog("Qual o nome da Escola do Aluno?");
-		String disciplina1 = JOptionPane.showInputDialog("Qual o nome da disciplina 1 do Aluno?");
-
-		double nota1 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 1:"));
-		String disciplina2 = JOptionPane.showInputDialog("Qual o nome da disciplina 2 do Aluno?");
-		double nota2 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 2:"));
-		String disciplina3 = JOptionPane.showInputDialog("Qual o nome da disciplina 3 do Aluno?");
-		double nota3 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 3:"));
-		String disciplina4 = JOptionPane.showInputDialog("Qual o nome da disciplina 4 do Aluno?");
-		double nota4 = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota 4:"));
 		String SerieMatriculado = JOptionPane.showInputDialog("Qual a série  do Aluno?");
 
 		Aluno aluno1 = new Aluno();
@@ -44,8 +35,29 @@ public class PrimeiraClasseJava {
 		aluno1.setNomeEscola(NomeEscola);
 		aluno1.setSerieMatriculado(SerieMatriculado);
 
-		Disciplina disciplinaAluno = new Disciplina();
+		Disciplina disciplinaAluno1 = new Disciplina();
+		disciplinaAluno1.setDisciplina("Banco de Dados");
+		disciplinaAluno1.setNota(90);
 		
+		aluno1.getDisciplinas().add(disciplinaAluno1);
+
+		Disciplina disciplinaAluno2 = new Disciplina();
+		disciplinaAluno2.setDisciplina("Matemática");
+		disciplinaAluno2.setNota(80);
+
+		aluno1.getDisciplinas().add(disciplinaAluno2);
+
+		Disciplina disciplinaAluno3 = new Disciplina();
+		disciplinaAluno3.setDisciplina("Geografia");
+		disciplinaAluno3.setNota(97);
+		
+		aluno1.getDisciplinas().add(disciplinaAluno3);
+				
+		Disciplina disciplinaAluno4 = new Disciplina();
+		disciplinaAluno3.setDisciplina("java Web");
+		disciplinaAluno3.setNota(70);
+		
+		aluno1.getDisciplinas().add(disciplinaAluno4);
 		
 		System.out.println(aluno1);
 		System.out.println();
