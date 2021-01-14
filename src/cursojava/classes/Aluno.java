@@ -122,7 +122,7 @@ public class Aluno {
 			somaNotas += disciplina.getNota();
 		}
 
-		return somaNotas / disciplinas.size() ;
+		return somaNotas / disciplinas.size();
 	}
 
 	@Override
@@ -133,12 +133,16 @@ public class Aluno {
 				+ ", \n serieMatriculado=" + serieMatriculado;
 	}
 
-	public boolean getAlunoAprovado() {
+	public String getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
-			return true;
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno está aprovado";
+			} else {
+				return "Aluno em recuperação";
+			}
 		} else {
-			return false;
+			return "Aluno está reprovado";
 		}
 	}
 
