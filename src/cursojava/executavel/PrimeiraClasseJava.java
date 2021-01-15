@@ -75,14 +75,24 @@ public class PrimeiraClasseJava {
 		}
 		for (Aluno aluno : alunos) {
 			if (aluno.getNome().equalsIgnoreCase("Samuel")) {
-
+				alunos.remove(aluno);
+				break;
+			} else {
 				System.out.println(aluno);
 				System.out.println();
 				System.out.println("Média do Aluno 1 = " + aluno.getMediaNota());
 				System.out.println();
 				System.out.println("Resultado média: " + aluno.getAlunoAprovado());
 				System.out.println("***********************************************");
-				break;
+			}
+		}
+
+		for (Aluno aluno : alunos) {
+			System.out.println("Alunos que sobraram na lista");
+			System.out.println(aluno.getNome());
+			System.out.println("Suas materias são: ");
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
 			}
 		}
 
