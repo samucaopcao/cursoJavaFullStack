@@ -7,10 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
-import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
-import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -19,9 +19,9 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o Login: ");
 		String senha = JOptionPane.showInputDialog("Informe a Senha: ");
 
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 
-		if (permitirAcesso.autenticar()) {// Se True entra no IF caso contrario nao
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {// Vamos travar o contrato para autorizar somente quem
+																	// tem o contrato legitimo
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
