@@ -26,7 +26,7 @@ public class PrimeiraClasseJava {
 																					// somente quem
 				// tem o contrato legitimo
 
-				List<Aluno> alunos = null;// new ArrayList<Aluno>();
+				List<Aluno> alunos = new ArrayList<Aluno>();
 
 				// É uma lista que dentro dela temos uma chave que identifica uma sequencia de
 				// valores também
@@ -132,8 +132,21 @@ public class PrimeiraClasseJava {
 			}
 
 		} catch (Exception e) {
+
+			StringBuilder saida = new StringBuilder();
 			e.printStackTrace();// Imprime o erro no console
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas.");
+			// Mensagem do erro ou causa
+			System.out.println("Mensagem: " + e.getMessage());
+
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+
+				saida.append("\n Classe de erro: " + e.getStackTrace()[i].getClassName());
+				saida.append("\n Método do erro: " + e.getStackTrace()[i].getMethodName());
+				saida.append("\n Linha do erro: " + e.getStackTrace()[i].getLineNumber());
+				saida.append("\n Linha do erro: " + e.getClass().getName());
+
+			}
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas." + saida.toString());
 		}
 
 	}
