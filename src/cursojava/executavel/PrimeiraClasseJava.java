@@ -35,9 +35,11 @@ public class PrimeiraClasseJava {
 				for (int qnt = 1; qnt <= 2; qnt++) {
 
 					String nome = JOptionPane.showInputDialog("Qual o nome do Aluno " + qnt + " ?");
+
+					String idade = JOptionPane.showInputDialog("Qual a idade do Aluno?");
+
 					/*
-					 * String idade = JOptionPane.showInputDialog("Qual a idade do Aluno?"); String
-					 * dataNascimento =
+					 * String dataNascimento =
 					 * JOptionPane.showInputDialog("Qual a data de nascimento do Aluno?"); String
 					 * RegistroGeral = JOptionPane.showInputDialog("Qual o RG do Aluno?"); String
 					 * NumeroCpf = JOptionPane.showInputDialog("Qual o CPF do Aluno?"); String
@@ -55,8 +57,9 @@ public class PrimeiraClasseJava {
 					Aluno aluno3 = new Aluno("Samuel");
 
 					aluno1.setNome(nome);
+
+					aluno1.setIdade(Integer.valueOf(idade));
 					/*
-					 * aluno1.setIdade(Integer.valueOf(idade));
 					 * aluno1.setDataNascimento(dataNascimento);
 					 * aluno1.setRegistroGeral(RegistroGeral); aluno1.setNumeroCpf(NumeroCpf);
 					 * aluno1.setNomeMae(NomeMae); aluno1.setNomePai(NomePai);
@@ -131,7 +134,7 @@ public class PrimeiraClasseJava {
 				JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			}
 
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 
 			StringBuilder saida = new StringBuilder();
 			e.printStackTrace();// Imprime o erro no console
@@ -146,8 +149,14 @@ public class PrimeiraClasseJava {
 				saida.append("\n Linha do erro: " + e.getClass().getName());
 
 			}
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas." + saida.toString());
+			JOptionPane.showMessageDialog(null, "Erro de conversão de número. " + saida.toString());
+
+		} catch (NullPointerException e) {
+
+			JOptionPane.showMessageDialog(null, "Erro de NullPointerException. " + e.getClass());
+
 		}
 
 	}
+
 }
