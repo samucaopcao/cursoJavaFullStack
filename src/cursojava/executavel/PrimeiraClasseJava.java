@@ -155,6 +155,9 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro de NullPointerException. " + e.getClass());
 
+		}catch(Exception e) {
+			e.printStackTrace();
+			
 		}
 
 	}
