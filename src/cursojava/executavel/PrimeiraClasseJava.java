@@ -1,8 +1,10 @@
 package cursojava.executavel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -14,9 +16,12 @@ import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		try {
+
+			File fil = new File("E:\\DESENVOLVIMENTO\\CURSOS\\JAVA_FULLSTACK\\Curso_Java_Fullstack\\src\\cursojava\\executavel\\lines.txt");
+			Scanner scanner = new Scanner(fil);
 
 			String login = JOptionPane.showInputDialog("Informe o Login: ");
 			String senha = JOptionPane.showInputDialog("Informe a Senha: ");
@@ -155,9 +160,10 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro de NullPointerException. " + e.getClass());
 
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-			
+			JOptionPane.showMessageDialog(null, "Erro inesperado. " + e.getClass().getName());
+
 		}
 
 	}
