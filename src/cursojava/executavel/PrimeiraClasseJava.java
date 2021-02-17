@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +14,7 @@ import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.ExcecaoProcessarNota;
 
 public class PrimeiraClasseJava {
 
@@ -20,8 +22,18 @@ public class PrimeiraClasseJava {
 
 		try {
 
-			File fil = new File("E:\\DESENVOLVIMENTO\\CURSOS\\JAVA_FULLSTACK\\Curso_Java_Fullstack\\src\\cursojava\\executavel\\lines.txt");
-			Scanner scanner = new Scanner(fil);
+			lerArquivo();
+
+			/*
+			 * Erro quando não encontra caminho do arquivo, esta sendo usada a classe
+			 * ExcecaoProcessarNota
+			 * 
+			 * try { File fil = new File("lines.txt"); Scanner scanner = new Scanner(fil);
+			 * 
+			 * } catch (FileNotFoundException e) {
+			 * 
+			 * throw new ExcecaoProcessarNota(e.getMessage()); }
+			 */
 
 			String login = JOptionPane.showInputDialog("Informe o Login: ");
 			String senha = JOptionPane.showInputDialog("Informe a Senha: ");
@@ -160,10 +172,27 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro de NullPointerException. " + e.getClass());
 
-		} catch (Exception e) {
+		} catch (ExcecaoProcessarNota e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro inesperado. " + e.getClass().getName());
+			JOptionPane.showMessageDialog(null, "Erro da exceção customizada " + e.getClass().getName());
 
+		} finally {
+
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender java.");
+		}
+
+	}
+
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+
+		try {
+
+			File fil = new File("lines.txt");
+			Scanner scanner = new Scanner(fil);
+
+		} catch (FileNotFoundException e) {
+
+			throw new ExcecaoProcessarNota(e.getMessage());
 		}
 
 	}
