@@ -172,7 +172,7 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro de NullPointerException. " + e.getClass());
 
-		} catch (ExcecaoProcessarNota e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro da exceção customizada " + e.getClass().getName());
 
@@ -183,17 +183,10 @@ public class PrimeiraClasseJava {
 
 	}
 
-	public static void lerArquivo() throws ExcecaoProcessarNota {
-
-		try {
+	public static void lerArquivo() throws FileNotFoundException {
 
 			File fil = new File("lines.txt");
 			Scanner scanner = new Scanner(fil);
-
-		} catch (FileNotFoundException e) {
-
-			throw new ExcecaoProcessarNota(e.getMessage());
-		}
 
 	}
 
