@@ -25,6 +25,29 @@ public class ArrayVetor {
 		disciplina2.setNota(notasC);
 		aluno.getDisciplinas().add(disciplina2);
 		
+		//---------------------------------------------------------------------------------------------
+		
+		Aluno[] arrayAlunos = new Aluno[1];
+		arrayAlunos[0] = aluno;
+
+		for (int i = 0; i < arrayAlunos.length; i++) {
+			System.out.println("Nome do Aluno :" + arrayAlunos[i].getNome());
+			for (Disciplina dis : arrayAlunos[i].getDisciplinas()) {
+				System.out.println("Nome da disciplina: " + dis.getDisciplina());
+				for (int j = 0; j < dis.getNota().length; j++) {
+					System.out.println("Nota: "+dis.getNota()[j]);
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		System.out.println("Nome do aluno é = " + aluno.getNome() + " e está Inscrito no Curso: "+ aluno.getNomeEscola());
 		
 		System.out.println(" ----------- Disciplinas do Aluno -----------\n");
@@ -46,7 +69,7 @@ public class ArrayVetor {
 				
 			}
 			System.out.println("A maior nota foi: "+notaMax+"\n");
-		}
+		}*/
 
 	}
 
