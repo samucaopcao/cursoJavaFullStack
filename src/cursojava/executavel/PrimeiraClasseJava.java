@@ -92,7 +92,7 @@ public class PrimeiraClasseJava {
 
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setNota(notaDisciplina);
+						//disciplina.setNota(notaDisciplina);
 
 						aluno1.getDisciplinas().add(disciplina);
 					}
@@ -185,7 +185,7 @@ public class PrimeiraClasseJava {
 
 	public static void lerArquivo() throws FileNotFoundException {
 
-			File fil = new File("lines.txt");
+			File fil = new File("E:\\DESENVOLVIMENTO\\CURSOS\\JAVA_FULLSTACK\\Curso_Java_Fullstack\\src\\cursojava\\executavel\\lines.txt");
 			Scanner scanner = new Scanner(fil);
 
 	}
